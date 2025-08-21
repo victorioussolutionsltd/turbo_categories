@@ -5,6 +5,7 @@ export const dataToNodes = (data) => {
     type: 'custom',
     data: { label: `${item.name} - ${item.description || ''}` },
     position: { x: 0, y: index * 70 },
+    deletable: false,
   }));
 };
 
