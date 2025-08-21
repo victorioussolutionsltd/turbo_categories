@@ -6,7 +6,7 @@ This repository provides a scalable and efficient `monorepo` setup using Turbore
 services and `NextJS` for frontend applications, with a suite of tools and libraries configured for seamless development
 and deployment.
 
-It has been created from a boilerplate (https://github.com/devaungphyo/turbo-npn.git), and cleaned up from the code that is not necessary for this task. Although some can argue that Turborepo for such a small project is a bit of an overkill, it shows a long-term direction and structure.
+It has been created from a boilerplate (https://github.com/theaungphyo/turborepo.git), and cleaned up from the code that is not necessary for this task. Although some can argue that Turborepo for such a small project is a bit of an overkill, it shows a long-term direction and structure.
 
 ### **Features**
 
