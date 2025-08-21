@@ -106,6 +106,11 @@ apps.
 - `pnpm prod` - Starts both the backend and frontend in production mode.
 - `pnpm test` - Runs all tests defined in the repository using TurboRepo.
 
+### Running in the browser
+
+To run it locally, open a link:
+http://localhost:5173/
+
 ### Contributing
 
 Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
