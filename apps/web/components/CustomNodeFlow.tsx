@@ -1,7 +1,6 @@
 import {
   addEdge,
   Background,
-  Position,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -16,29 +15,10 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-const CustomNodeFlow = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState([
-    {
-      id: '1',
-      type: 'input',
-      data: { label: 'Node 1' },
-      position: { x: 0, y: 25 },
-      sourcePosition: Position.Right,
-    },
-    {
-      id: '2',
-      type: 'custom',
-      data: {},
-      position: { x: 250, y: 50 },
-    },
-    {
-      id: '3',
-      type: 'input',
-      data: { label: 'Node 2' },
-      position: { x: 0, y: 100 },
-      sourcePosition: Position.Right,
-    },
-  ]);
+const CustomNodeFlow = (props) => {
+  console.log({ props });
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(props.nodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const onConnect = useCallback(

@@ -3,7 +3,7 @@ import { memo } from 'react';
 
 import CustomHandle from './CustomHandle';
 
-const CustomNode = () => {
+const CustomNode = ({ data }) => {
   return (
     <div>
       <CustomHandle
@@ -11,7 +11,13 @@ const CustomNode = () => {
         position={Position.Left}
         connectionCount={1}
       />
-      <div>{'← Only one edge allowed'}</div>
+      <div>{data.label}</div>
+      <div>{data.description}</div>
+      <CustomHandle
+        type="source"
+        position={Position.Right}
+        connectionCount={0}
+      />
     </div>
   );
 };

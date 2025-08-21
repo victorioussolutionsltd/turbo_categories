@@ -1,22 +1,21 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import CustomNodeFlow from './components/CustomNodeFlow';
 
-import { fetchData } from './api';
+import { fetchData } from './api/index';
+import { dataToNodes } from './utils/dataToNodes';
 
 const App = () => {
-  const [data, setData] = React.useState(null);
-  React.useEffect(() => {
-    fetchData('https://jsonplaceholder.typicode.com/todos/1')
-      .then(setData)
-      .catch(console.error);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData('categories').then(setData).catch(console.error);
   }, []);
 
-  return (
-    <div>
-      <CustomNodeFlow />
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  );
+  if (!data.length) {
+    return <div>Loading...</div>;
+  }
+
+  return <CustomNodeFlow nodes={dataToNodes(data)} />;
 };
 
 export default App;
