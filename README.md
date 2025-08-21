@@ -1,6 +1,6 @@
 <img src="assets/preview.png" width="851" alt="hello">
 
-## NestJS & NextJS Boilerplate with Turborepo
+## NestJS & NextJS Categories project with Turborepo
 
 This repository provides a scalable and efficient `monorepo` setup using Turborepo. It includes `NestJS` for backend
 services and `NextJS` for frontend applications, with a suite of tools and libraries configured for seamless development
