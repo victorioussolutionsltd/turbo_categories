@@ -1,4 +1,4 @@
-## Microsoft GitHub Copilot
+# Microsoft GitHub Copilot
 
 I used Copilot's suggestions, but also asked the question how the docker-compose.yml from another repository should be integrated, and whether it is good practice to put it in the root folder.
 Some questions related to NestJS complaining about unrecognised Logger usage.
