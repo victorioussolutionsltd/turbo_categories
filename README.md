@@ -1,5 +1,3 @@
-<img src="assets/preview.png" width="851" alt="hello">
-
 ## NestJS & NextJS Categories project with Turborepo
 
 This repository provides a scalable and efficient `monorepo` setup using Turborepo. It includes `NestJS` for backend
@@ -8,6 +6,12 @@ services and `React Flow` for frontend applications, with a suite of tools and l
 I removed unnecessary code and set up the configuration. I also moved files from another repository into this one and created a Dockerfile, making it easy to compose a container. For development purposes, it’s beneficial to separate controlling the container from running the project, but this can be combined if needed.
 
 Also, for the simplicity, quick and effective run of this application .env files are checked in (normally bad practise).
+
+The code was written using Visual Studio Code (Version: 1.103.1) with GitHub Copilot, Chrome browser, on Apple M2 Max machine.
+
+I used Copilot's suggestions, but also asked the question how the docker-compose.yml from another repository should be integrated, and whether it is good practice to put it in the root folder.
+
+I also used nestJS CLI to generate a new module.
 
 ### **Features**
 
@@ -28,6 +32,15 @@ Also, for the simplicity, quick and effective run of this application .env files
 - License
 
 ### **Installation**
+
+# Required software
+
+Tested on Mac OS (26.0) Tahoe Beta 7
+
+- Docker (desktop) 4.44.3 (202357)
+- NVM - Node v22.15.0
+- pnpm 10.0.0
+- DBeaver Version 25.1.5.202508171444
 
 Clone the repository:
 
@@ -77,6 +90,10 @@ turborepo
 
 The backend is powered by NestJS, with TypeORM configured to use PostgreSQL.
 There is no authentication needed for running this project.
+
+The Categories controller has endpoints responsible for more data manipulation.
+The DTO types can be used for validation.
+NestJS is a very clean and elegant solution, enforcing some good architectural practices and patterns.
 
 <img src="assets/lifecycle.png" alt="life cycle" width="100%">
 
