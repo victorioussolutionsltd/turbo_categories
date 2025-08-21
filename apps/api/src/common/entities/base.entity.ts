@@ -26,12 +26,12 @@ export abstract class Base {
    * @type {Date}
    */
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   /**
    * Timestamp when the entity was last updated.
    * @type {Date}
    */
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
