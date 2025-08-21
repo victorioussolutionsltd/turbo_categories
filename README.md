@@ -9,9 +9,7 @@ Also, for the simplicity, quick and effective run of this application .env files
 
 The code was written using Visual Studio Code (Version: 1.103.1) with GitHub Copilot, Chrome browser, on Apple M2 Max machine.
 
-I used Copilot's suggestions, but also asked the question how the docker-compose.yml from another repository should be integrated, and whether it is good practice to put it in the root folder.
-
-I also used nestJS CLI to generate a new module.
+I used nestJS CLI to generate a new module.
 
 ### **Features**
 
