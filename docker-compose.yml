@@ -7,12 +7,12 @@ services:
       POSTGRES_USER: developer
       POSTGRES_PASSWORD: devpassword
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - ./database/init:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U developer -d categories_db"]
+      test: ['CMD-SHELL', 'pg_isready -U developer -d categories_db']
       interval: 10s
       timeout: 5s
       retries: 5
