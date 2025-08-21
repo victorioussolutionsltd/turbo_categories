@@ -3,7 +3,7 @@
 This repository provides a scalable and efficient `monorepo` setup using Turborepo. It includes `NestJS` for backend
 services and `React Flow` for frontend applications, with a suite of tools and libraries configured for seamless development and deployment.
 
-I removed unnecessary code and set up the configuration. I also moved files from another repository into this one and created a Dockerfile, making it easy to compose a container. For development purposes, it’s beneficial to separate controlling the container from running the project, but this can be combined if needed.
+I removed carefully unnecessary code from the boilerplate (https://github.com/theaungphyo/turborepo.git) and set up the configuration. I also moved files from another repository into this one and created a Dockerfile, making it easy to compose a container. For development purposes, it’s beneficial to separate controlling the container from running the project, but this can be combined if needed.
 
 Also, for the simplicity, quick and effective run of this application .env files are checked in (normally bad practise).
 
