@@ -6,7 +6,6 @@
   "scripts": {
     "add:api": "pnpm add --filter=api",
     "add:main": "pnpm add -w",
-    "add:shadcn": "pnpm add --filter=@repo/shadcn",
     "add:utils": "pnpm add --filter=@repo/utils",
     "add:web": "pnpm add --filter=web",
     "build": "turbo build",

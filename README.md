@@ -9,16 +9,12 @@ and deployment.
 ### **Features**
 
 - `NestJS (v11)` backend
-- `NextJS (v15)` frontend
+- `React Flow (v12)` frontend
 - `SWC` for fast TypeScript and JavaScript transpilation
 - `pnpm` for efficient dependency management
-- `JWT` Access Token & Refresh Token Authentication for secure API access
 - `PostgreSQL` database with TypeORM
-- `Nodemailer` for email services
 - `Linting` and `Formatting` pre-configured for code quality
 - `Micro-Frontend` Support with Turborepo
-- `Shadcn/UI` integration for styled components
-- `Tailwindcss(v4)` integration in `@repo/shadcn`
 
 ### **Table of Contents**
 
@@ -34,13 +30,13 @@ and deployment.
 Clone the repository:
 
 ```shell
-git clone https://github.com/devaungphyo/turbo-npn.git
+git clone https://github.com/victorioussolutionsltd/turbo_categories
 ```
 
 Navigate to the project directory:
 
 ```shell
-cd turbo-npn
+cd turbo-categories
 ```
 
 Install dependencies using pnpm:
@@ -69,7 +65,6 @@ turborepo
 │   └── web              # NextJS application
 ├── assets               # Assets folder for media assets
 ├── packages
-│   ├── shadcn           # shadcn/UI component library
 │   ├── ts-config        # Shared typescript configuration files
 │   ├── eslint-config    # Shared eslint configuration files
 │   ├── utils            # Shared utils functions
@@ -78,42 +73,17 @@ turborepo
 
 ### Backend (NestJS)
 
-The backend is powered by NestJS, with TypeORM configured to use PostgreSQL. JWT access token and refresh token
-authentication is implemented for secure API access. Nodemailer is used to handle email services.
+The backend is powered by NestJS, with TypeORM configured to use PostgreSQL.
+There is no authentication needed for running this project.
 
 <img src="assets/lifecycle.png" alt="life cycle" width="100%">
 
 ### Frontend (NextJS)
 
-The frontend is built with NextJS v15, styled with shadcn/UI components. It is optimized for server-side rendering and
-frontend authentication.
+The frontend is built with NextJS v15. It is optimized for server-side rendering.
 Micro-Frontend with Turborepo
 Using Turborepo, the project supports a micro-frontend architecture, enabling shared libraries and configurations across
 apps.
-
-### To Add New UI Components to the UI Package
-
-```shell
-cd packages/shadcn
-```
-
-Then run the following command:
-
-```shell
-pnpm dlx shadcn@latest add
-```
-
-This will add the latest version of shadcn to the UI package.
-
-`If you got an error in the UI package, change the import path`
-
-```tsx
-// form
-import { cn } from '@repo/lib/utils';
-
-// to
-import { cn } from '@repo/shadcn/lib/utils';
-```
 
 ### Scripts
 
