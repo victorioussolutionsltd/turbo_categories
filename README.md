@@ -99,7 +99,8 @@ NestJS is a very clean and elegant solution, enforcing some good architectural p
 
 ### Frontend (React Flow v12)
 
-The frontend is built with React Flow.
+The frontend is built with React Flow, a fantastic and powerful library for presenting and manipulating flows and graphs. Since its first release, it has been significantly improved, making it ready for use.
+
 Micro-Frontend with Turborepo (scalable, fast, easy to use)
 Using Turborepo, the project supports a micro-frontend architecture, enabling shared libraries and configurations across
 apps.
@@ -125,6 +126,7 @@ apps.
 ### Running in the browser
 
 To run it locally, open a link:
+
 http://localhost:5173/
 
 ### How it works
