@@ -17,6 +17,8 @@
     "dev": "turbo dev",
     "dev:api": "pnpm dev --filter=api",
     "dev:web": "pnpm dev --filter=web",
+    "docker:down": "docker-compose down",
+    "docker:up": "docker-compose up --build -d",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "turbo lint",

@@ -24,6 +24,11 @@
     "test": {
       "cache": false,
       "dependsOn": ["^test"]
+    },
+    "docker": {
+      "cache": false,
+      "persistent": false,
+      "outputs": []
     }
   }
 }
