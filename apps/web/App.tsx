@@ -15,7 +15,7 @@ const App = () => {
     return <div>Loading...</div>;
   }
 
-  return <CustomNodeFlow nodes={dataToNodes(data)} />;
+  return <CustomNodeFlow data={dataToNodes(data)} />;
 };
 
 export default App;

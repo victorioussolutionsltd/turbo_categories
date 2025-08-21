@@ -3,7 +3,13 @@ import { memo } from 'react';
 
 import CustomHandle from './CustomHandle';
 
-const CustomNode = ({ data }) => {
+interface CustomNodeProps {
+  data: {
+    label: string;
+  };
+}
+
+const CustomNode = ({ data }: CustomNodeProps) => {
   return (
     <div>
       <CustomHandle
@@ -11,12 +17,11 @@ const CustomNode = ({ data }) => {
         position={Position.Left}
         connectionCount={1}
       />
-      <div>{data.label}</div>
-      <div>{data.description}</div>
+      {data.label}
       <CustomHandle
         type="source"
         position={Position.Right}
-        connectionCount={0}
+        connectionCount={1}
       />
     </div>
   );

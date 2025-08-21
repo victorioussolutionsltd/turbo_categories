@@ -1,11 +1,12 @@
 import {
   addEdge,
   Background,
+  Controls,
   ReactFlow,
   useEdgesState,
   useNodesState,
 } from '@xyflow/react';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import '@xyflow/react/dist/style.css';
 
@@ -15,16 +16,22 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-const CustomNodeFlow = (props) => {
-  console.log({ props });
+interface CustomNodeFlowProps {
+  data: any[];
+}
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(props.nodes);
+const CustomNodeFlow = (props) => {
+  const [nodes, setNodes, onNodesChange] = useNodesState(props.data);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges],
   );
+
+  useEffect(() => {
+    console.log({ edges });
+  }, [edges]);
 
   return (
     <ReactFlow
@@ -37,6 +44,7 @@ const CustomNodeFlow = (props) => {
       fitView
     >
       <Background />
+      <Controls />
     </ReactFlow>
   );
 };
