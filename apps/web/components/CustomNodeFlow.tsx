@@ -22,7 +22,7 @@ interface CustomNodeFlowProps {
   data: any[];
 }
 
-const CustomNodeFlow = ({ data, onRefetch }) => {
+const CustomNodeFlow = ({ data }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(dataToNodes(data));
   const [edges, setEdges, onEdgesChange] = useEdgesState(dataToEdges(data));
 
@@ -34,6 +34,10 @@ const CustomNodeFlow = ({ data, onRefetch }) => {
   useEffect(() => {
     console.log({ edges });
   }, [edges]);
+
+  useEffect(() => {
+    console.log({ nodes });
+  }, [nodes]);
 
   const onSave = useCallback(() => {}, []);
 

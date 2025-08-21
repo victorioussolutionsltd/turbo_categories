@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
-import CustomNodeFlow from './components/CustomNodeFlow';
-
+import { useEffect } from 'react';
 import { fetchData } from './api/index';
+import CustomNodeFlow from './components/CustomNodeFlow';
+import { useCategories } from './context/CategoriesContext';
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const { categories, setCategories } = useCategories();
 
   useEffect(() => {
-    fetchData('categories').then(setData).catch(console.error);
-  }, [fetchData]);
+    fetchData('categories').then(setCategories).catch(console.error);
+  }, []);
 
-  if (!data.length) {
+  if (!categories.length) {
     return <div>Loading...</div>;
   }
 
-  return <CustomNodeFlow data={data} />;
+  return <CustomNodeFlow data={categories} />;
 };
 
 export default App;
