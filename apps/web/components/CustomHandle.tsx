@@ -8,7 +8,11 @@ const CustomHandle = (props) => {
   return (
     <Handle
       {...props}
-      isConnectable={connections.length < props.connectionCount}
+      isConnectable={
+        props.connectionCount
+          ? connections.length < props.connectionCount
+          : true
+      }
     />
   );
 };

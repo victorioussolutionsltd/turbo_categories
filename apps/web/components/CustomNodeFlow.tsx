@@ -2,6 +2,7 @@ import {
   addEdge,
   Background,
   Controls,
+  Panel,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -10,6 +11,7 @@ import { useCallback, useEffect } from 'react';
 
 import '@xyflow/react/dist/style.css';
 
+import { dataToEdges, dataToNodes } from '../utils/mapping';
 import CustomNode from './CustomNode';
 
 const nodeTypes = {
@@ -20,9 +22,9 @@ interface CustomNodeFlowProps {
   data: any[];
 }
 
-const CustomNodeFlow = (props) => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(props.data);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+const CustomNodeFlow = ({ data, onRefetch }) => {
+  const [nodes, setNodes, onNodesChange] = useNodesState(dataToNodes(data));
+  const [edges, setEdges, onEdgesChange] = useEdgesState(dataToEdges(data));
 
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
@@ -32,6 +34,8 @@ const CustomNodeFlow = (props) => {
   useEffect(() => {
     console.log({ edges });
   }, [edges]);
+
+  const onSave = useCallback(() => {}, []);
 
   return (
     <ReactFlow
@@ -44,6 +48,11 @@ const CustomNodeFlow = (props) => {
       fitView
     >
       <Background />
+      <Panel position="top-right">
+        <button className="xy-theme__button" onClick={onSave}>
+          SAVE
+        </button>
+      </Panel>
       <Controls />
     </ReactFlow>
   );

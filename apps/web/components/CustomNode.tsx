@@ -18,11 +18,7 @@ const CustomNode = ({ data }: CustomNodeProps) => {
         connectionCount={1}
       />
       {data.label}
-      <CustomHandle
-        type="source"
-        position={Position.Right}
-        connectionCount={1}
-      />
+      <CustomHandle type="source" position={Position.Right} />
     </div>
   );
 };

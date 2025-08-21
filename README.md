@@ -3,10 +3,11 @@
 ## NestJS & NextJS Categories project with Turborepo
 
 This repository provides a scalable and efficient `monorepo` setup using Turborepo. It includes `NestJS` for backend
-services and `NextJS` for frontend applications, with a suite of tools and libraries configured for seamless development
-and deployment.
+services and `React Flow` for frontend applications, with a suite of tools and libraries configured for seamless development and deployment.
 
-It has been created from a boilerplate (https://github.com/theaungphyo/turborepo.git), and cleaned up from the code that is not necessary for this task. Although some can argue that Turborepo for such a small project is a bit of an overkill, it shows a long-term direction and structure.
+I removed unnecessary code and set up the configuration. I also moved files from another repository into this one and created a Dockerfile, making it easy to compose a container. For development purposes, it’s beneficial to separate controlling the container from running the project, but this can be combined if needed.
+
+Also, for the simplicity, quick and effective run of this application .env files are checked in (normally bad practise).
 
 ### **Features**
 
@@ -24,7 +25,6 @@ It has been created from a boilerplate (https://github.com/theaungphyo/turborepo
 - Getting Started
 - Project Structure
 - Scripts
-- Contributing
 - License
 
 ### **Installation**
@@ -65,12 +65,11 @@ turborepo
 ├── .husky               # Git hooks
 ├── apps
 │   ├── api              # NestJS application
-│   └── web              # NextJS application
+│   └── web              # React Flow graph application
 ├── assets               # Assets folder for media assets
 ├── packages
 │   ├── ts-config        # Shared typescript configuration files
 │   ├── eslint-config    # Shared eslint configuration files
-│   ├── utils            # Shared utils functions
 └── turbo.json           # Turborepo configuration
 ```
 
@@ -81,10 +80,10 @@ There is no authentication needed for running this project.
 
 <img src="assets/lifecycle.png" alt="life cycle" width="100%">
 
-### Frontend (NextJS)
+### Frontend (React Flow v12)
 
-The frontend is built with NextJS v15. It is optimized for server-side rendering.
-Micro-Frontend with Turborepo
+The frontend is built with React Flow.
+Micro-Frontend with Turborepo (scalable, fast, easy to use)
 Using Turborepo, the project supports a micro-frontend architecture, enabling shared libraries and configurations across
 apps.
 
@@ -111,9 +110,21 @@ apps.
 To run it locally, open a link:
 http://localhost:5173/
 
-### Contributing
+### How it works
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
+The application renders the content of database's table, but it does not perform any special validation. If the data is corrupted - it is not guaranteed to work as expected at this stage.
+By selecting a handle and dragging it to opposite item's handle, you can connect categories.
+
+You can select edges (lines) and delete them using Backspace (on Mac).
+
+Category can have unlimited subcategories, but can have only one parent or none.
+At this point, it is possible to connect and make a circular connection between category and subcategory, but it should be discussed further.
+
+The changes can be saved in the database by pressing a `SAVE` button.
+
+The grid can be zoomed out/in and is lockable.
+
+Refreshing the page will load the database's content, and any unsaved changes will be lost.
 
 ### License
 
