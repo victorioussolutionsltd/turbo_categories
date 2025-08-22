@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL } from './config';
+import { API_URL } from './urls';
 
 export const fetchData = async (endpoint) => {
   try {
@@ -27,6 +27,18 @@ export const putData = async (endpoint, data) => {
     return response.data;
   } catch (error) {
     console.error('Error updating data:', error);
+    throw error;
+  }
+};
+
+export const patchData = async (endpoint, data) => {
+  try {
+    const response = await axios.patch(`${API_URL}/${endpoint}`, data, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error patching data:', error);
     throw error;
   }
 };

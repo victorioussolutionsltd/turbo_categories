@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm/dist/common/typeorm.decorators';
 import { Repository } from 'typeorm';
 import { CreateCategoryDto } from './dto/create-category.dto';
-import { UpdateCategoryDto } from './dto/update-category.dto';
 import { Categories } from './entities/categories.entity';
 
 @Injectable()
@@ -25,8 +24,13 @@ export class CategoriesService {
     return this.categoriesRepository.findBy({ id });
   }
 
-  update(id: string, updateCategoryDto: UpdateCategoryDto) {
-    return this.categoriesRepository.update(id, updateCategoryDto);
+  async update(connections: { [key: number]: number | undefined }) {
+    await Promise.all(
+      Object.entries(connections).map(([id, value]) =>
+        this.categoriesRepository.update(Number(id), { parent_id: value }),
+      ),
+    );
+    return { updated: Object.keys(connections).length };
   }
 
   async remove(id: string) {

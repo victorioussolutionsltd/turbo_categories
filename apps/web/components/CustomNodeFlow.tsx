@@ -2,6 +2,7 @@ import {
   addEdge,
   Background,
   Controls,
+  Edge,
   Panel,
   ReactFlow,
   useEdgesState,
@@ -20,9 +21,10 @@ const nodeTypes = {
 
 interface CustomNodeFlowProps {
   data: any[];
+  onSave: (edges: Edge[]) => void;
 }
 
-const CustomNodeFlow = ({ data }) => {
+const CustomNodeFlow = ({ data, onSave }: CustomNodeFlowProps) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(dataToNodes(data));
   const [edges, setEdges, onEdgesChange] = useEdgesState(dataToEdges(data));
 
@@ -39,7 +41,7 @@ const CustomNodeFlow = ({ data }) => {
     console.log({ nodes });
   }, [nodes]);
 
-  const onSave = useCallback(() => {}, []);
+  const save = () => onSave(edges);
 
   return (
     <ReactFlow
@@ -53,7 +55,7 @@ const CustomNodeFlow = ({ data }) => {
     >
       <Background />
       <Panel position="top-right">
-        <button className="xy-theme__button" onClick={onSave}>
+        <button className="xy-theme__button" onClick={save}>
           SAVE
         </button>
       </Panel>
