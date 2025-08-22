@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-  "isolatedModules": true,
+    "isolatedModules": true,
     "target": "ESNext",
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -8,7 +8,7 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": true
   },
   "include": ["./**/*.d.ts", "./**/*.{js,jsx,ts,tsx}"]
 }
