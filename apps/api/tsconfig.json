@@ -1,6 +1,7 @@
 {
   "extends": "@repo/ts-config/nestjs.json",
   "compilerOptions": {
+    "isolatedModules": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false,
