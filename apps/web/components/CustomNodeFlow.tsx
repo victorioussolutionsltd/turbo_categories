@@ -12,6 +12,7 @@ import { useCallback, useEffect } from 'react';
 
 import '@xyflow/react/dist/style.css';
 
+import { Category } from '../types';
 import { dataToEdges, dataToNodes } from '../utils/mapping';
 import CustomNode from './CustomNode';
 
@@ -20,7 +21,7 @@ const nodeTypes = {
 };
 
 interface CustomNodeFlowProps {
-  data: any[];
+  data: Category[];
   onSave: (edges: Edge[]) => void;
 }
 

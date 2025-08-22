@@ -1,9 +1,10 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
+import { Category } from '../types';
 
 // Define the shape of your context data
 interface CategoriesContextType {
-  categories: any[];
-  setCategories: React.Dispatch<React.SetStateAction<any[]>>;
+  categories: Category[];
+  setCategories: React.Dispatch<React.SetStateAction<Category[]>>;
 }
 
 const CategoriesContext = createContext<CategoriesContextType | undefined>(
@@ -11,7 +12,7 @@ const CategoriesContext = createContext<CategoriesContextType | undefined>(
 );
 
 export const CategoriesProvider = ({ children }: { children: ReactNode }) => {
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const value = React.useMemo(
     () => ({ categories, setCategories }),
     [categories],
