@@ -8,7 +8,7 @@ import {
   useEdgesState,
   useNodesState,
 } from '@xyflow/react';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import '@xyflow/react/dist/style.css';
 
@@ -33,14 +33,6 @@ const CustomNodeFlow = ({ data, onSave }: CustomNodeFlowProps) => {
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges],
   );
-
-  useEffect(() => {
-    console.log({ edges });
-  }, [edges]);
-
-  useEffect(() => {
-    console.log({ nodes });
-  }, [nodes]);
 
   const save = () => onSave(edges);
 
