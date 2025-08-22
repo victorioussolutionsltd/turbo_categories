@@ -8,3 +8,4 @@ Some questions related to NestJS complaining about unrecognised Logger usage.
 - can Dockerfile live under apps?
 - "pnpm add axios" (in frontend to speed up the process)
 - create context api hook and store data from App.tsx there
+  -generate unit tests for utils
