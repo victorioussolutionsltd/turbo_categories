@@ -1,5 +1,9 @@
 ## NestJS & NextJS Categories project with Turborepo
 
+Make sure your browser plugin is configured also for PATCH requests:
+
+<img src="assets/cors.png" alt="life cycle" width="100%">
+
 This repository provides a scalable and efficient `monorepo` setup using Turborepo. It includes `NestJS` for backend
 services and `React Flow` for frontend applications, with a suite of tools and libraries configured for seamless development and deployment.
 
@@ -90,7 +94,7 @@ The backend is powered by NestJS, with TypeORM configured to use PostgreSQL.
 There is no authentication needed for running this project.
 
 The Categories controller has endpoints responsible for more data manipulation.
-The DTO types can be used for validation.
+The DTO types can be used for validation (Category type shared between FE and BE).
 NestJS is a very clean and elegant solution, enforcing some good architectural practices and patterns.
 
 <img src="assets/lifecycle.png" alt="life cycle" width="100%">
@@ -142,6 +146,10 @@ The changes can be saved in the database by pressing a `SAVE` button.
 The grid can be zoomed out/in and is lockable.
 
 Refreshing the page will load the database's content, and any unsaved changes will be lost.
+
+### Further improvements
+
+The order of the items may change after saving and re-loading data. That can be confusing for the user.
 
 ### License
 
