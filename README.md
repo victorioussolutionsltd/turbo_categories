@@ -1,4 +1,4 @@
-## NestJS & NextJS Categories project with Turborepo
+## NestJS & React Flow Categories project with Turborepo
 
 Make sure your browser plugin is configured also for PATCH requests:
 
